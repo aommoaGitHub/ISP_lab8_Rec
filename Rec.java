@@ -17,6 +17,7 @@ public class Rec {
         
     }
 
+
 	/**
 	 * = number of the digits in the decimal representation of n. e.g.
 	 * numDigits(0) = 1, numDigits(3) = 1, numDigits(34) = 2. numDigits(1356) =
@@ -30,6 +31,20 @@ public class Rec {
 		}
 		return count;
 	}
+
+    /** = sum of the digits in the decimal representation of n.
+      e.g. sumDigits(0) = 0, sumDigits(3) = 3, sumDigits(34) = 7,
+      sumDigits(345) = 12.
+      Precondition: n >= 0. */
+     public static int sumDigits( int n ) {
+    	int temp,sum = 0;    	
+    	for( int i = 0 ; i < numDigits( n ) ; i++ ){
+    		temp = n / ( int ) ( Math.pow( 10, i ) );
+    		sum += temp % 10;
+    	}
+    	return sum;
+    }
+
 	
     /** = a copy of s with to_remove_char removed.
 		Example: removeChar("abeabe", 'e') = "abab". */
