@@ -24,8 +24,14 @@ public class Rec {
     /** = a copy of s with to_remove_char removed.
 		Example: removeChar("abeabe", 'e') = "abab". */
 	public static String removeChar(String s, char to_remove_char) {
-	
-	// fill me in
+	if (s.length() == 0) {
+			return "";
+		}
+		if(to_remove_char == (s.charAt(0))) {
+			return removeChar(s.substring(1, s.length()) ,to_remove_char);
+		}
+		
+	return s.substring(0,1) + removeChar(s.substring(1, s.length()) ,to_remove_char);
 	
 	}
 	
